@@ -1,0 +1,103 @@
+{
+  "config": {
+    "abort": {
+      "already_configured": "此 Tesla Fleet 空調實體已設定。"
+    },
+    "step": {
+      "user": {
+        "data": {
+          "fleet_entity": "Tesla Fleet 空調實體",
+          "mqtt_climate_on_entity": "TeslaMate MQTT 空調開啟實體",
+          "mqtt_current_temperature_entity": "TeslaMate MQTT 車內溫度實體",
+          "mqtt_preset_entity": "TeslaMate MQTT 空調保持模式實體",
+          "name": "名稱",
+          "teslamate_charge_limit_entity": "TeslaMate 充電上限實體",
+          "teslamate_charge_port_door_entity": "TeslaMate 充電口蓋開啟實體",
+          "teslamate_frunk_entity": "TeslaMate 前行李廂開啟實體",
+          "teslamate_locked_entity": "TeslaMate 車輛鎖定實體",
+          "teslamate_sentry_mode_entity": "TeslaMate 哨兵模式實體",
+          "teslamate_target_temperature_entity": "TeslaMate 目標溫度實體",
+          "teslamate_trunk_entity": "TeslaMate 後行李廂開啟實體",
+          "teslamate_windows_entity": "TeslaMate 車窗開啟實體"
+        },
+        "description": "選擇 Tesla Fleet 命令實體和 TeslaMate 遙測實體。狀態資訊僅來自 TeslaMate，Tesla Fleet 僅用於傳送命令，以盡量減少 API 配額使用。",
+        "title": "設定 Tesla 虛擬控制"
+      }
+    }
+  },
+  "entity": {
+    "climate": {
+      "driver_temp": {
+        "name": "空調",
+        "state_attributes": {
+          "preset_mode": {
+            "state": {
+              "camp": "露營模式",
+              "dog": "遛狗模式",
+              "keep": "怠速模式",
+              "off": "正常"
+            }
+          }
+        }
+      }
+    },
+    "cover": {
+      "charge_port_door": {
+        "name": "充電口蓋"
+      },
+      "frunk": {
+        "name": "前行李箱"
+      },
+      "trunk": {
+        "name": "後車廂"
+      },
+      "windows": {
+        "name": "車窗"
+      }
+    },
+    "lock": {
+      "vehicle_lock": {
+        "name": "車鎖"
+      }
+    },
+    "number": {
+      "charge_limit": {
+        "name": "充電上限"
+      }
+    },
+    "switch": {
+      "sentry_mode": {
+        "name": "哨兵模式"
+      }
+    }
+  },
+  "options": {
+    "step": {
+      "init": {
+        "data": {
+          "fleet_entity": "Tesla Fleet 空調實體",
+          "mqtt_climate_on_entity": "TeslaMate MQTT 空調開啟實體",
+          "mqtt_current_temperature_entity": "TeslaMate MQTT 車內溫度實體",
+          "mqtt_preset_entity": "TeslaMate MQTT 空調保持模式實體",
+          "name": "名稱",
+          "teslamate_charge_limit_entity": "TeslaMate 充電上限實體",
+          "teslamate_charge_port_door_entity": "TeslaMate 充電口蓋開啟實體",
+          "teslamate_frunk_entity": "TeslaMate 前行李廂開啟實體",
+          "teslamate_locked_entity": "TeslaMate 車輛鎖定實體",
+          "teslamate_sentry_mode_entity": "TeslaMate 哨兵模式實體",
+          "teslamate_target_temperature_entity": "TeslaMate 目標溫度實體",
+          "teslamate_trunk_entity": "TeslaMate 後行李廂開啟實體",
+          "teslamate_windows_entity": "TeslaMate 車窗開啟實體"
+        },
+        "description": "變更後將重新載入此整合。狀態資訊來自 TeslaMate，Tesla Fleet 僅用於傳送命令。",
+        "title": "設定 Tesla 虛擬控制"
+      }
+    }
+  },
+  "title": "Tesla Virtual Controls",
+  "exceptions": {
+    "telemetry_unavailable": {
+      "message": "TeslaMate 實體 {entity_id} 的狀態無法使用。為避免錯誤切換，未傳送命令。"
+    }
+  }
+}

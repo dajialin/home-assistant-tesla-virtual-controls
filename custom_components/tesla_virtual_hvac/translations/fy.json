@@ -1,0 +1,103 @@
+{
+  "config": {
+    "abort": {
+      "already_configured": "This Tesla Fleet climate entity is already configured."
+    },
+    "step": {
+      "user": {
+        "data": {
+          "fleet_entity": "Tesla Fleet climate entity",
+          "mqtt_climate_on_entity": "TeslaMate MQTT climate-on entity",
+          "mqtt_current_temperature_entity": "TeslaMate MQTT cabin temperature entity",
+          "mqtt_preset_entity": "TeslaMate MQTT climate keeper entity",
+          "name": "Name",
+          "teslamate_charge_limit_entity": "TeslaMate charge-limit entity",
+          "teslamate_charge_port_door_entity": "TeslaMate charge-port-door-open entity",
+          "teslamate_frunk_entity": "TeslaMate frunk-open entity",
+          "teslamate_locked_entity": "TeslaMate vehicle-locked entity",
+          "teslamate_sentry_mode_entity": "TeslaMate sentry-mode entity",
+          "teslamate_target_temperature_entity": "TeslaMate target temperature entity",
+          "teslamate_trunk_entity": "TeslaMate trunk-open entity",
+          "teslamate_windows_entity": "TeslaMate windows-open entity"
+        },
+        "description": "Choose the Tesla Fleet command entity and TeslaMate telemetry entities. State comes from TeslaMate; Tesla Fleet is used only for commands to minimize API quota usage.",
+        "title": "Configure Tesla Virtual Controls"
+      }
+    }
+  },
+  "entity": {
+    "climate": {
+      "driver_temp": {
+        "name": "Climate",
+        "state_attributes": {
+          "preset_mode": {
+            "state": {
+              "camp": "Camp mode",
+              "dog": "Dog mode",
+              "keep": "Keep mode",
+              "off": "Normaal"
+            }
+          }
+        }
+      }
+    },
+    "cover": {
+      "charge_port_door": {
+        "name": "Charge port door"
+      },
+      "frunk": {
+        "name": "Frunk"
+      },
+      "trunk": {
+        "name": "Trunk"
+      },
+      "windows": {
+        "name": "Windows"
+      }
+    },
+    "lock": {
+      "vehicle_lock": {
+        "name": "Lock"
+      }
+    },
+    "number": {
+      "charge_limit": {
+        "name": "Charge limit"
+      }
+    },
+    "switch": {
+      "sentry_mode": {
+        "name": "Sentry mode"
+      }
+    }
+  },
+  "options": {
+    "step": {
+      "init": {
+        "data": {
+          "fleet_entity": "Tesla Fleet climate entity",
+          "mqtt_climate_on_entity": "TeslaMate MQTT climate-on entity",
+          "mqtt_current_temperature_entity": "TeslaMate MQTT cabin temperature entity",
+          "mqtt_preset_entity": "TeslaMate MQTT climate keeper entity",
+          "name": "Name",
+          "teslamate_charge_limit_entity": "TeslaMate charge-limit entity",
+          "teslamate_charge_port_door_entity": "TeslaMate charge-port-door-open entity",
+          "teslamate_frunk_entity": "TeslaMate frunk-open entity",
+          "teslamate_locked_entity": "TeslaMate vehicle-locked entity",
+          "teslamate_sentry_mode_entity": "TeslaMate sentry-mode entity",
+          "teslamate_target_temperature_entity": "TeslaMate target temperature entity",
+          "teslamate_trunk_entity": "TeslaMate trunk-open entity",
+          "teslamate_windows_entity": "TeslaMate windows-open entity"
+        },
+        "description": "Changes reload the integration. State comes from TeslaMate and Tesla Fleet is used only for commands.",
+        "title": "Configure Tesla Virtual Controls"
+      }
+    }
+  },
+  "title": "Tesla Virtual Controls",
+  "exceptions": {
+    "telemetry_unavailable": {
+      "message": "TeslaMate entity {entity_id} is unavailable. No command was sent to avoid toggling the wrong state."
+    }
+  }
+}

@@ -1,0 +1,103 @@
+{
+  "config": {
+    "abort": {
+      "already_configured": "이 Tesla Fleet 공조 엔티티는 이미 구성되어 있습니다."
+    },
+    "step": {
+      "user": {
+        "data": {
+          "fleet_entity": "Tesla Fleet climate entity",
+          "mqtt_climate_on_entity": "TeslaMate MQTT climate-on entity",
+          "mqtt_current_temperature_entity": "TeslaMate MQTT cabin temperature entity",
+          "mqtt_preset_entity": "TeslaMate MQTT climate keeper entity",
+          "name": "Name",
+          "teslamate_charge_limit_entity": "TeslaMate 충전 한도 엔티티",
+          "teslamate_charge_port_door_entity": "TeslaMate 충전 포트 도어 열림 엔티티",
+          "teslamate_frunk_entity": "TeslaMate 프렁크 열림 엔티티",
+          "teslamate_locked_entity": "TeslaMate 차량 잠금 엔티티",
+          "teslamate_sentry_mode_entity": "TeslaMate 감시 모드 엔티티",
+          "teslamate_target_temperature_entity": "TeslaMate target temperature entity",
+          "teslamate_trunk_entity": "TeslaMate 트렁크 열림 엔티티",
+          "teslamate_windows_entity": "TeslaMate 창문 열림 엔티티"
+        },
+        "description": "Tesla Fleet 명령 엔티티와 TeslaMate 텔레메트리 엔티티를 선택합니다. 상태는 TeslaMate에서만 가져오며 API 할당량을 절약하기 위해 Tesla Fleet은 명령 전송에만 사용합니다.",
+        "title": "Configure Tesla Virtual Controls"
+      }
+    }
+  },
+  "entity": {
+    "climate": {
+      "driver_temp": {
+        "name": "공조기기",
+        "state_attributes": {
+          "preset_mode": {
+            "state": {
+              "camp": "캠프 모드",
+              "dog": "개 모드",
+              "keep": "유지 모드",
+              "off": "정상"
+            }
+          }
+        }
+      }
+    },
+    "cover": {
+      "charge_port_door": {
+        "name": "충전 포트 도어"
+      },
+      "frunk": {
+        "name": "프렁크"
+      },
+      "trunk": {
+        "name": "트렁크"
+      },
+      "windows": {
+        "name": "창문"
+      }
+    },
+    "lock": {
+      "vehicle_lock": {
+        "name": "잠금장치"
+      }
+    },
+    "number": {
+      "charge_limit": {
+        "name": "요금 한도"
+      }
+    },
+    "switch": {
+      "sentry_mode": {
+        "name": "경계 모드"
+      }
+    }
+  },
+  "options": {
+    "step": {
+      "init": {
+        "data": {
+          "fleet_entity": "Tesla Fleet climate entity",
+          "mqtt_climate_on_entity": "TeslaMate MQTT climate-on entity",
+          "mqtt_current_temperature_entity": "TeslaMate MQTT cabin temperature entity",
+          "mqtt_preset_entity": "TeslaMate MQTT climate keeper entity",
+          "name": "Name",
+          "teslamate_charge_limit_entity": "TeslaMate 충전 한도 엔티티",
+          "teslamate_charge_port_door_entity": "TeslaMate 충전 포트 도어 열림 엔티티",
+          "teslamate_frunk_entity": "TeslaMate 프렁크 열림 엔티티",
+          "teslamate_locked_entity": "TeslaMate 차량 잠금 엔티티",
+          "teslamate_sentry_mode_entity": "TeslaMate 감시 모드 엔티티",
+          "teslamate_target_temperature_entity": "TeslaMate target temperature entity",
+          "teslamate_trunk_entity": "TeslaMate 트렁크 열림 엔티티",
+          "teslamate_windows_entity": "TeslaMate 창문 열림 엔티티"
+        },
+        "description": "변경하면 통합이 다시 로드됩니다. 상태는 TeslaMate에서 가져오며 Tesla Fleet은 명령 전송에만 사용합니다.",
+        "title": "Configure Tesla Virtual Controls"
+      }
+    }
+  },
+  "title": "Tesla Virtual Controls",
+  "exceptions": {
+    "telemetry_unavailable": {
+      "message": "TeslaMate 엔티티 {entity_id}의 상태를 사용할 수 없습니다. 잘못된 전환을 방지하기 위해 명령을 보내지 않았습니다."
+    }
+  }
+}

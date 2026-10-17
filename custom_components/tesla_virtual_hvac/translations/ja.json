@@ -1,0 +1,103 @@
+{
+  "config": {
+    "abort": {
+      "already_configured": "この Tesla Fleet 空調エンティティはすでに設定されています。"
+    },
+    "step": {
+      "user": {
+        "data": {
+          "fleet_entity": "Tesla Fleet 空調エンティティ",
+          "mqtt_climate_on_entity": "TeslaMate MQTT 空調オンエンティティ",
+          "mqtt_current_temperature_entity": "TeslaMate MQTT 車内温度エンティティ",
+          "mqtt_preset_entity": "TeslaMate MQTT 空調キーパーモードエンティティ",
+          "name": "名前",
+          "teslamate_charge_limit_entity": "TeslaMate 充電上限エンティティ",
+          "teslamate_charge_port_door_entity": "TeslaMate 充電ポートドア開放エンティティ",
+          "teslamate_frunk_entity": "TeslaMate フランク開放エンティティ",
+          "teslamate_locked_entity": "TeslaMate 車両ロックエンティティ",
+          "teslamate_sentry_mode_entity": "TeslaMate セントリーモードエンティティ",
+          "teslamate_target_temperature_entity": "TeslaMate 設定温度エンティティ",
+          "teslamate_trunk_entity": "TeslaMate トランク開放エンティティ",
+          "teslamate_windows_entity": "TeslaMate ウィンドウ開放エンティティ"
+        },
+        "description": "Tesla Fleet のコマンド用エンティティと TeslaMate のテレメトリエンティティを選択します。状態は TeslaMate からのみ取得し、API クォータを節約するため Tesla Fleet はコマンド送信にのみ使用します。",
+        "title": "Tesla Virtual Controls を設定"
+      }
+    }
+  },
+  "entity": {
+    "climate": {
+      "driver_temp": {
+        "name": "空調",
+        "state_attributes": {
+          "preset_mode": {
+            "state": {
+              "camp": "キャンプモード",
+              "dog": "ドッグモード",
+              "keep": "キープモード",
+              "off": "ノーマル"
+            }
+          }
+        }
+      }
+    },
+    "cover": {
+      "charge_port_door": {
+        "name": "充電口のドア"
+      },
+      "frunk": {
+        "name": "フランク"
+      },
+      "trunk": {
+        "name": "トランク"
+      },
+      "windows": {
+        "name": "ウィンドウ"
+      }
+    },
+    "lock": {
+      "vehicle_lock": {
+        "name": "ロック"
+      }
+    },
+    "number": {
+      "charge_limit": {
+        "name": "充電制限"
+      }
+    },
+    "switch": {
+      "sentry_mode": {
+        "name": "セントリーモード"
+      }
+    }
+  },
+  "options": {
+    "step": {
+      "init": {
+        "data": {
+          "fleet_entity": "Tesla Fleet 空調エンティティ",
+          "mqtt_climate_on_entity": "TeslaMate MQTT 空調オンエンティティ",
+          "mqtt_current_temperature_entity": "TeslaMate MQTT 車内温度エンティティ",
+          "mqtt_preset_entity": "TeslaMate MQTT 空調キーパーモードエンティティ",
+          "name": "名前",
+          "teslamate_charge_limit_entity": "TeslaMate 充電上限エンティティ",
+          "teslamate_charge_port_door_entity": "TeslaMate 充電ポートドア開放エンティティ",
+          "teslamate_frunk_entity": "TeslaMate フランク開放エンティティ",
+          "teslamate_locked_entity": "TeslaMate 車両ロックエンティティ",
+          "teslamate_sentry_mode_entity": "TeslaMate セントリーモードエンティティ",
+          "teslamate_target_temperature_entity": "TeslaMate 設定温度エンティティ",
+          "teslamate_trunk_entity": "TeslaMate トランク開放エンティティ",
+          "teslamate_windows_entity": "TeslaMate ウィンドウ開放エンティティ"
+        },
+        "description": "変更すると統合が再読み込みされます。状態は TeslaMate から取得し、Tesla Fleet はコマンド送信にのみ使用します。",
+        "title": "Tesla Virtual Controls を設定"
+      }
+    }
+  },
+  "title": "Tesla Virtual Controls",
+  "exceptions": {
+    "telemetry_unavailable": {
+      "message": "TeslaMate エンティティ {entity_id} の状態を取得できません。誤った切り替えを防ぐため、コマンドは送信されませんでした。"
+    }
+  }
+}

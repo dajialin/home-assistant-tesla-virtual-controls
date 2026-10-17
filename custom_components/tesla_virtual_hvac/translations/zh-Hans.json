@@ -1,0 +1,103 @@
+{
+  "config": {
+    "abort": {
+      "already_configured": "此 Tesla Fleet 空调实体已被配置。"
+    },
+    "step": {
+      "user": {
+        "data": {
+          "fleet_entity": "Tesla Fleet 空调实体",
+          "mqtt_climate_on_entity": "TeslaMate MQTT 空调开启实体",
+          "mqtt_current_temperature_entity": "TeslaMate MQTT 车内温度实体",
+          "mqtt_preset_entity": "TeslaMate MQTT 空调保持模式实体",
+          "name": "名称",
+          "teslamate_charge_limit_entity": "TeslaMate 充电上限实体",
+          "teslamate_charge_port_door_entity": "TeslaMate 充电口盖开启实体",
+          "teslamate_frunk_entity": "TeslaMate 前备箱开启实体",
+          "teslamate_locked_entity": "TeslaMate 车辆锁定实体",
+          "teslamate_sentry_mode_entity": "TeslaMate 哨兵模式实体",
+          "teslamate_target_temperature_entity": "TeslaMate 目标温度实体",
+          "teslamate_trunk_entity": "TeslaMate 后备箱开启实体",
+          "teslamate_windows_entity": "TeslaMate 车窗开启实体"
+        },
+        "description": "选择 Tesla Fleet 命令实体和 TeslaMate 遥测实体。状态信息仅来自 TeslaMate，Tesla Fleet 仅用于发送命令，以尽量减少 API 配额使用。",
+        "title": "配置 Tesla 虚拟控制"
+      }
+    }
+  },
+  "entity": {
+    "climate": {
+      "driver_temp": {
+        "name": "空调",
+        "state_attributes": {
+          "preset_mode": {
+            "state": {
+              "camp": "营地模式",
+              "dog": "狗狗模式",
+              "keep": "保持模式",
+              "off": "正常"
+            }
+          }
+        }
+      }
+    },
+    "cover": {
+      "charge_port_door": {
+        "name": "充电口盖"
+      },
+      "frunk": {
+        "name": "前备箱"
+      },
+      "trunk": {
+        "name": "后备箱"
+      },
+      "windows": {
+        "name": "车窗"
+      }
+    },
+    "lock": {
+      "vehicle_lock": {
+        "name": "车锁"
+      }
+    },
+    "number": {
+      "charge_limit": {
+        "name": "充电上限"
+      }
+    },
+    "switch": {
+      "sentry_mode": {
+        "name": "哨兵模式"
+      }
+    }
+  },
+  "options": {
+    "step": {
+      "init": {
+        "data": {
+          "fleet_entity": "Tesla Fleet 空调实体",
+          "mqtt_climate_on_entity": "TeslaMate MQTT 空调开启实体",
+          "mqtt_current_temperature_entity": "TeslaMate MQTT 车内温度实体",
+          "mqtt_preset_entity": "TeslaMate MQTT 空调保持模式实体",
+          "name": "名称",
+          "teslamate_charge_limit_entity": "TeslaMate 充电上限实体",
+          "teslamate_charge_port_door_entity": "TeslaMate 充电口盖开启实体",
+          "teslamate_frunk_entity": "TeslaMate 前备箱开启实体",
+          "teslamate_locked_entity": "TeslaMate 车辆锁定实体",
+          "teslamate_sentry_mode_entity": "TeslaMate 哨兵模式实体",
+          "teslamate_target_temperature_entity": "TeslaMate 目标温度实体",
+          "teslamate_trunk_entity": "TeslaMate 后备箱开启实体",
+          "teslamate_windows_entity": "TeslaMate 车窗开启实体"
+        },
+        "description": "更改后将重新加载此集成。状态信息来自 TeslaMate，Tesla Fleet 仅用于发送命令。",
+        "title": "配置 Tesla 虚拟控制"
+      }
+    }
+  },
+  "title": "Tesla Virtual Controls",
+  "exceptions": {
+    "telemetry_unavailable": {
+      "message": "TeslaMate 实体 {entity_id} 的状态不可用。为避免错误切换，未发送命令。"
+    }
+  }
+}

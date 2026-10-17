@@ -1,0 +1,17 @@
+{
+  "domain": "tesla_virtual_hvac",
+  "name": "Tesla Virtual Controls",
+  "codeowners": [
+    "@xtymmms1021"
+  ],
+  "config_flow": true,
+  "dependencies": [
+    "tesla_fleet"
+  ],
+  "documentation": "https://github.com/xtymmms1021/home-assistant-tesla-virtual-controls",
+  "integration_type": "device",
+  "iot_class": "calculated",
+  "issue_tracker": "https://github.com/xtymmms1021/home-assistant-tesla-virtual-controls/issues",
+  "requirements": [],
+  "version": "3.4.3"
+}

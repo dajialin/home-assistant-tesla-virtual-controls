@@ -1,0 +1,65 @@
+{
+  "entity": {
+    "climate": {
+      "driver_temp": {
+        "state_attributes": {
+          "preset_mode": {
+            "state": {
+              "camp": "mdi:tent",
+              "dog": "mdi:dog",
+              "keep": "mdi:fan",
+              "off": "mdi:power"
+            }
+          }
+        }
+      }
+    },
+    "cover": {
+      "trunk": {
+        "default": "mdi:car-back",
+        "state": {
+          "closed": "mdi:car"
+        }
+      },
+      "frunk": {
+        "default": "mdi:car",
+        "state": {
+          "closed": "mdi:car-outline"
+        }
+      },
+      "charge_port_door": {
+        "default": "mdi:ev-plug-ccs2",
+        "state": {
+          "closed": "mdi:ev-station"
+        }
+      },
+      "windows": {
+        "default": "mdi:window-open",
+        "state": {
+          "closed": "mdi:window-closed"
+        }
+      }
+    },
+    "switch": {
+      "sentry_mode": {
+        "default": "mdi:shield-car",
+        "state": {
+          "off": "mdi:shield-off-outline"
+        }
+      }
+    },
+    "lock": {
+      "vehicle_lock": {
+        "state": {
+          "locked": "mdi:car-door-lock",
+          "unlocked": "mdi:car-door-lock-open"
+        }
+      }
+    },
+    "number": {
+      "charge_limit": {
+        "default": "mdi:battery-charging"
+      }
+    }
+  }
+}
